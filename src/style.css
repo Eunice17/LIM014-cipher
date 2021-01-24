@@ -14,10 +14,10 @@ font-family: 'Rock Salt', cursive;*/
     --body-color:#00BD8C;
     --text-input:#A1A1A1;
     --note-start:#B7E4C7;
-    --note-lineS:#CFE3D6;
+    --note-lineS:#acd8bb;
     --text-note:#22223B;
     --note-end:#ffff3f;
-    --line-noteE:#e4e445;
+    --line-noteE:#eeee40;
     background-color: var(--body-color);
 }
 header{
@@ -107,14 +107,8 @@ header >h1{
 .areas .after,
 .areas .before{
     position: relative;
-    
 }
-.areas .after::after{
-    background-color: var(--note-lineS);
-}
-.areas .before::after{
-    background-color: var(--line-noteE);
-}   
+
 .areas .after::after,
 .areas .before::after{
     position: absolute;
@@ -122,8 +116,18 @@ header >h1{
     content: '';
     top:35px;
     width: 100%;
-    height: 2px;
+    border-top: dashed;
+    border-width: 2px;
+    height: 1px;
 }
+.areas .after::after{
+    border-color: var(--note-lineS);
+    background-color: none;
+}
+.areas .before::after{
+    border-color: var(--line-noteE);
+    background-color: none;
+}   
 .areas .after::before,
 .areas .before::before{
     position:absolute;
@@ -218,6 +222,10 @@ header >h1{
     }
     .areas .boton > .cifrar{
         width: 200px;
+    }
+    .areas .boton > .cifrar::after,
+    .areas .boton > .cifrar::before{
+        width: 50%;
     }
     .texto{
         text-align: center;
